@@ -53,7 +53,7 @@ class App extends Component {
                   </div>
                   <div className="percent">
 					   					
-                    <li>{item.percent.toFixed(2)} </li>
+                    <li>{item.percent.toFixed(2)}</li>
                   </div>
                 </div>
               );
