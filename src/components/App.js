@@ -39,33 +39,48 @@ class App extends Component {
 		}
 	};
     render() {
-    	return(
-    		<div id="main">
-    			{
-    				//Correct the percentage conditional for correct output
-    				this.state.list.map(function(item,index){
-				   		if(item.percent > 0)
-				   		{
-				   			return(
-				   				//Conditional statement in the className of below div to give callName="bg-pink"
-				   				//if the percent >= 90 else className = "" 
-				   				<div key={index} className={}>
-					   				<div className="name">
-					   					 //Write code to display name
-					   				</div>
-					   				<div className="percent">
+    return (
+      <div id="main">
+        {
+          //Correct the percentage conditional for correct output
+          this.state.list.map(function (item, index) {
+            if (item.percent >= 90) {
+              return (
+                //Conditional statement in the className of below div to give callName="bg-pink"
+                //if the percent >= 90 else className = "" 
+                <div key={index} className={"bg-pink"}>
+                  <div className="name">
+                    <li>{item.name}</li>
+                  </div>
+                  <div className="percent">
 					   					 //Write code to display percentage upto 2 decimal places
-					   				</div>
-				   				</div>
-				   				);
-				   		}
-			       })
-			    }
-    		</div>
-    		);
-    }
+                    <li>{item.percent.toFixed(2)} </li>
+                  </div>
+                </div>
+              );
+            }
+            else if (item.percent > 75 && item.percent < 90) {
+              return (
+                //Conditional statement in the className of below div to give callName="bg-pink"
+                //if the percent >= 90 else className = "" 
+                <div key={index} className={""}>
+                  <div className="name">
+                       //Write code to display name
+                    <li>{item.name}</li>
+                  </div>
+                  <div className="percent">
+                       //Write code to display percentage upto 2 decimal places
+                    <li>{item.percent.toFixed(2)}</li>
+                  </div>
+                </div>
+              );
+            }
+          })
+        }
+      </div>
+    );
+  }
 }
 
 
 export default App;
-
