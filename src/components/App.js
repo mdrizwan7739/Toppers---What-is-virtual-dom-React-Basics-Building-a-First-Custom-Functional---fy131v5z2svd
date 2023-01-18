@@ -63,7 +63,7 @@ class App extends Component {
             
                 <div key={index} className={""}>
                   <div className="name">
-                       //Write code to display name
+                    
                     <li>{item.name}</li>
                   </div>
                   <div className="percent">
